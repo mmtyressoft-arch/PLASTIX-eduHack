@@ -23,6 +23,7 @@ export const STUDENT_SIDEBAR = [
       { id: 'quizzes', label: 'Online Tests', icon: 'Circle' },
     ]
   },
+  { id: 'ml-forecasting', label: 'ML Analytics', icon: 'BarChart3' },
   { id: 'fees', label: 'Fees', icon: 'CreditCard' },
   { id: 'logout', label: 'Logout', icon: 'LogOut' },
 ];

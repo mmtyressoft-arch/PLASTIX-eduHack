@@ -4,7 +4,7 @@ import {
   LayoutDashboard, FileText, FileCheck, Settings, CheckSquare, 
   Bell, Flag, Calendar, Briefcase, Monitor, File, ExternalLink, 
   Layout, CreditCard, Home, Truck, Lock, CalendarDays, LogOut,
-  ChevronDown, ChevronRight, Menu, User, Circle, BookOpen
+  ChevronDown, ChevronRight, Menu, User, Circle, BookOpen, BarChart3
 } from 'lucide-react';
 import { STUDENT_SIDEBAR, TEACHER_SIDEBAR } from '../constants';
 import { UserProfile } from '../types';
@@ -12,7 +12,7 @@ import { UserProfile } from '../types';
 const iconMap: Record<string, any> = {
   LayoutDashboard, FileText, FileCheck, Settings, CheckSquare, 
   Bell, Flag, Calendar, Briefcase, Monitor, File, ExternalLink, 
-  Layout, CreditCard, Home, Truck, Lock, CalendarDays, LogOut, Circle, BookOpen
+  Layout, CreditCard, Home, Truck, Lock, CalendarDays, LogOut, Circle, BookOpen, BarChart3
 };
 
 interface LayoutProps {

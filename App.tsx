@@ -5,6 +5,8 @@ import { Dashboard } from './components/Dashboard';
 import { AttendanceDetails } from './components/AttendanceDetails';
 import { GradeDetails } from './components/GradeDetails';
 import { LMSDashboard } from './components/LMSModule';
+import { TeacherDashboard } from './components/TeacherLMS';
+import { MLForecasting } from './components/MLForecasting';
 import { Login } from './components/Login';
 import { UserProfile, Student, Teacher } from './types';
 import { supabase } from './lib/supabase';
@@ -88,25 +90,22 @@ const App: React.FC = () => {
         case 'attendance': return <AttendanceDetails studentId={user.id} />;
         case 'marks': return <GradeDetails studentId={user.id} />;
         case 'lms-dashboard': return <LMSDashboard studentId={user.id} />;
+        case 'assignments': return <LMSDashboard studentId={user.id} />;
+        case 'quizzes': return <LMSDashboard studentId={user.id} />;
+        case 'ml-forecasting': return <MLForecasting student={user as Student} />;
         default: break;
       }
     } else {
       switch (activeTab) {
         case 'teacher-dashboard':
+          return <TeacherDashboard teacher={user as Teacher} />;
+        case 'evaluate':
+          return <TeacherDashboard teacher={user as Teacher} />;
+        case 'my-courses':
           return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white p-6 border border-gray-200 shadow-sm text-center">
-                <div className="text-3xl font-bold text-blue-600">3</div>
-                <div className="text-xs uppercase font-bold text-gray-500 mt-1 tracking-widest">Active Courses</div>
-              </div>
-              <div className="bg-white p-6 border border-gray-200 shadow-sm text-center">
-                <div className="text-3xl font-bold text-orange-600">12</div>
-                <div className="text-xs uppercase font-bold text-gray-500 mt-1 tracking-widest">Pending Grading</div>
-              </div>
-              <div className="bg-white p-6 border border-gray-200 shadow-sm text-center">
-                <div className="text-3xl font-bold text-green-600">98%</div>
-                <div className="text-xs uppercase font-bold text-gray-500 mt-1 tracking-widest">Engagment Rate</div>
-              </div>
+            <div className="bg-white p-10 border border-gray-200 rounded text-center">
+              <h2 className="text-lg font-bold text-gray-700">Course Management</h2>
+              <p className="text-sm text-gray-500 mt-2">Module to upload Syllabus & Weekly Materials is under construction.</p>
             </div>
           );
         default: break;
