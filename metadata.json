@@ -1,0 +1,5 @@
+{
+  "name": "SIS-KARE Student Portal",
+  "description": "A high-fidelity replica of a university Student Information System (SIS) featuring attendance tracking, grade management, and personal profiles.",
+  "requestFramePermissions": []
+}
