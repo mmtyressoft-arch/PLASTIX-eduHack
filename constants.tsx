@@ -18,6 +18,7 @@ export const SIDEBAR_ITEMS = [
       { id: 'registration', label: 'Registration', icon: 'Circle' },
     ]
   },
+  { id: 'grade-forecasting', label: 'Grade Forecasting', icon: 'TrendingUp', isNew: true },
   { id: 'hall-ticket', label: 'Hall Ticket', icon: 'CheckSquare', isNew: true },
   { id: 'course-reg', label: 'Course Registration', icon: 'Bell' },
   { id: 'course-withdraw', label: 'Coursewithdrawal', icon: 'Bell' },

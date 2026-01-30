@@ -68,3 +68,15 @@ export interface Notification {
   type: 'general' | 'alert';
   created_at: string;
 }
+
+export interface MLPrediction {
+  id: string;
+  student_id: string;
+  predicted_gpa: number;
+  risk_level: 'Low' | 'Medium' | 'High';
+  performance_trend: 'Improving' | 'Stable' | 'Declining';
+  confidence_score: number;
+  risk_factors: string[];
+  recommendation: string;
+  prediction_date: string;
+}

@@ -4,6 +4,7 @@ import { AppLayout } from './components/Layout';
 import { Dashboard } from './components/Dashboard';
 import { AttendanceDetails } from './components/AttendanceDetails';
 import { GradeDetails } from './components/GradeDetails';
+import { GradeForecasting } from './components/GradeForecasting';
 import { Login } from './components/Login';
 import { Student } from './types';
 import { supabase } from './lib/supabase';
@@ -65,7 +66,10 @@ const App: React.FC = () => {
       case 'attendance':
         return <AttendanceDetails studentId={user.id} />;
       case 'grade':
+      case 'marks':
         return <GradeDetails studentId={user.id} />;
+      case 'grade-forecasting':
+        return <GradeForecasting studentId={user.id} />;
       case 'logout':
         handleLogout();
         return null;
