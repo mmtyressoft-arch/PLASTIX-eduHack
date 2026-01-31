@@ -22,7 +22,7 @@ const App: React.FC = () => {
     setAuthError('');
     
     try {
-      // 1. Try Student Login
+      // 1. Try Student Login via Supabase
       const { data: student, error: sError } = await supabase
         .from('students')
         .select('*')
@@ -32,6 +32,36 @@ const App: React.FC = () => {
 
       if (student) {
         setUser({ ...student, role: 'student' } as Student);
+        setIsLoading(false);
+        return;
+      }
+
+      // Hardcoded Mock Fallback for the demo student '9924008006'
+      // This ensures the user can test the failure prediction even if Supabase isn't synced
+      if (id === '9924008006' && pass === 'pass123') {
+        const mockStudent: Student = {
+          id: 'mock-uuid-9924008006',
+          name: 'Mithun Nishanthk',
+          email: 'mithun.n@klu.ac.in',
+          role: 'student',
+          reg_no: '9924008006',
+          aadhar: '1234 5678 9012',
+          degree: 'B.Tech IT',
+          batch: '2021-2025',
+          section: 'B',
+          faculty_advisor: 'Dr. S. Karthik',
+          dob: '2003-05-15',
+          gender: 'MALE',
+          nationality: 'INDIAN',
+          religion: 'HINDU',
+          community: 'BC',
+          caste: 'N/A',
+          address: '78, North Street, Madurai',
+          cgpa: 6.5,
+          earned_credits: 92,
+          arrears: 2
+        };
+        setUser(mockStudent);
         setIsLoading(false);
         return;
       }
@@ -78,7 +108,6 @@ const App: React.FC = () => {
   }
 
   const renderContent = () => {
-    // Shared content or role-specific routing
     if (activeTab === 'logout') {
       handleLogout();
       return null;
