@@ -90,7 +90,6 @@ export interface QuizQuestion {
   correct_option: number;
 }
 
-// Added missing fields used in AttendanceDetails.tsx
 export interface AttendanceRecord {
   id: string;
   course_code: string;
@@ -104,7 +103,6 @@ export interface AttendanceRecord {
   percentage?: string;
 }
 
-// Added DailyAttendance interface to fix import error in AttendanceDetails.tsx
 export interface DailyAttendance {
   id: string;
   student_id: string;
@@ -114,7 +112,6 @@ export interface DailyAttendance {
   status: string;
 }
 
-// Added missing fields used in GradeDetails.tsx
 export interface GradeRecord {
   id: string;
   semester: number;
@@ -127,7 +124,6 @@ export interface GradeRecord {
   exam_month_year: string;
 }
 
-// Added CreditRequirement interface to fix import error in GradeDetails.tsx
 export interface CreditRequirement {
   id: string;
   student_id: string;
@@ -136,4 +132,22 @@ export interface CreditRequirement {
   studied: number;
   earned: number;
   to_be_earned: number;
+}
+
+export interface ActivityLog {
+  id: string;
+  user_id: string;
+  role: string;
+  action: string;
+  course_code: string;
+  time_spent_seconds: number;
+  created_at: string;
+}
+
+export interface QuizAttempt {
+  id: string;
+  quiz_id: string;
+  student_id: string;
+  score: number;
+  completed_at: string;
 }
